@@ -77,26 +77,28 @@ Construir um sistema de gerenciamento de usuários e suas habilidades (skills), 
 ```bash
 cd backend
 ./mvnw spring-boot:run
+```
 API disponível em: http://localhost:8080
 
-```
+
 🌐 Frontend Web
 
 ```bash
 cd frontend-web
 npm install
 npm start
+```
 Interface disponível em: http://localhost:3000
 
-```
 📱 Frontend Mobile
 
 ```bash
 cd frontend-mobile
 npm install
 npx expo start
+```
 Use o aplicativo Expo Go no celular para escanear o QR code.
 
-```
 👨‍💻 Autor
+
 Mateus Karl Peixoto
