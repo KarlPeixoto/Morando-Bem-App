@@ -67,38 +67,36 @@ Construir um sistema de gerenciamento de usuários e suas habilidades (skills), 
 - Git instalado
 - (Opcional: DBeaver para gerenciar o banco)
 
-### 🐘 Banco de Dados
+🐘 Banco de Dados
 
 1. Crie um banco de dados chamado `sistema_skill` no PostgreSQL
 2. Execute o script localizado em: `database/SistemaSkill.sql`
 
-### ▶️ Backend
+▶️ Backend
 
 ```bash
 cd backend
 ./mvnw spring-boot:run
 API disponível em: http://localhost:8080
 
+```
 🌐 Frontend Web
-bash
-Copiar
-Editar
+
+```bash
 cd frontend-web
 npm install
 npm start
 Interface disponível em: http://localhost:3000
 
+```
 📱 Frontend Mobile
-bash
-Copiar
-Editar
+
+```bash
 cd frontend-mobile
 npm install
 npx expo start
 Use o aplicativo Expo Go no celular para escanear o QR code.
 
-📸 Prints ou Vídeos
-(Adicione aqui capturas de tela ou gifs das telas após desenvolvimento)
-
+```
 👨‍💻 Autor
-Mateus Karl
+Mateus Karl Peixoto
