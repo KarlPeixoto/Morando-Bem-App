@@ -44,11 +44,6 @@ Construir um sistema de gerenciamento de usuários e suas habilidades (skills), 
 ├── frontend-web/ # Interface web (React)
 └── database/ # Script SQL para criação do banco de dados
 
-yaml
-Copiar
-Editar
-
----
 
 ## ⚙️ Funcionalidades
 
@@ -74,7 +69,7 @@ Editar
 
 ### 🐘 Banco de Dados
 
-1. Crie um banco de dados chamado `nekiprojeto` no PostgreSQL
+1. Crie um banco de dados chamado `sistema_skill` no PostgreSQL
 2. Execute o script localizado em: `database/SistemaSkill.sql`
 
 ### ▶️ Backend
