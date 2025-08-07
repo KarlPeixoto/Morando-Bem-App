@@ -68,7 +68,7 @@ public class UsuarioService {
             throw new RuntimeException("E-mail já confirmado");
         }
 
-        if (!codigo.equals(usuario.getCodigoConfirmacao())){
+        if (!codigo.equals(usuario.getCodigoConfirmacao())) {
             throw new RuntimeException("Código de confirmação inválido");
         }
 
@@ -82,5 +82,12 @@ public class UsuarioService {
 
     public Optional<Usuario> buscarPorLogin(String login) {
         return usuarioRepository.findByLoginAndAtivoTrue(login);
+    }
+
+    public void deletarUsuario(Long id) {
+        Optional<Usuario> usuarioOpt = usuarioRepository.findById(id);
+        if (usuarioOpt.isEmpty()) {
+            throw new RuntimeException("Usuário não encontrada");
+        }
     }
 }
