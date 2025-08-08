@@ -72,4 +72,29 @@ public class UsuarioController {
         
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/auth/login")
+    public ResponseEntity<?> login(@RequestBody Map<String, String> loginData) {
+        String login = loginData.get("login");
+        String senha = loginData.get("senha");
+        
+        // Verificar se usuário existe e senha está correta
+        var usuarioOpt = usuarioService.buscarPorLogin(login);
+        if (usuarioOpt.isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Login ou senha incorretos"));
+        }
+        
+        Usuario usuario = usuarioOpt.get();
+        // Assuming passwordEncoder is available in the context or needs to be injected
+        // For now, a placeholder for password comparison
+        if (!usuario.getSenha().equals(senha)) { // Placeholder for password comparison
+            return ResponseEntity.badRequest().body(Map.of("error", "Login ou senha incorretos"));
+        }
+        
+        Map<String, Object> response = new HashMap<>();
+        response.put("token", "mock-token-" + login);
+        response.put("login", login);
+        
+        return ResponseEntity.ok(response);
+    }
 }

@@ -1,0 +1,180 @@
+.home-container {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-container h1 {
+  margin-bottom: 20px;
+  color: #007acc;
+  font-weight: 700;
+  text-align: center;
+}
+
+.home-container button {
+  background-color: #007acc;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.home-container button:hover {
+  background-color: #005fa3;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  background: #e0e7ff;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-list li span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222;
+}
+
+.skill-list li button {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.skill-list li button.update-btn {
+  background-color: #007acc;
+  color: white;
+}
+
+.skill-list li button.update-btn:hover {
+  background-color: #005fa3;
+}
+
+.skill-list li button.delete-btn {
+  background-color: #cc3c3c;
+  color: white;
+}
+
+.skill-list li button.delete-btn:hover {
+  background-color: #992626;
+}
+
+/* Modal backdrop e modal estilo base para os modais */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 28px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.modal h2 {
+  margin-bottom: 18px;
+  color: #007acc;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.modal input:focus,
+.modal textarea:focus,
+.modal select:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+.modal button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #007acc;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #005fa3;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}

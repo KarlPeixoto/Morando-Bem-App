@@ -81,6 +81,12 @@ public class UsuarioService {
     }
 
     public Optional<Usuario> buscarPorLogin(String login) {
+        // Mudar para buscar todos os usuários, não apenas ativos
+        return usuarioRepository.findByLogin(login);
+    }
+
+    // Adicionar método específico para buscar usuários ativos
+    public Optional<Usuario> buscarPorLoginAtivo(String login) {
         return usuarioRepository.findByLoginAndAtivoTrue(login);
     }
 

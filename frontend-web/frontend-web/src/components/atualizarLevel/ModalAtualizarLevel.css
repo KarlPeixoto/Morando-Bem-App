@@ -1,0 +1,67 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 28px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal h2 {
+  margin-bottom: 18px;
+  color: #007acc;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.modal input:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+.modal button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #007acc;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #005fa3;
+}
+
+.modal .btn-cancel {
+  background-color: #cc3c3c;
+  margin-top: 12px;
+}
+
+.modal .btn-cancel:hover {
+  background-color: #992626;
+}

@@ -1,0 +1,78 @@
+.login-container {
+  max-width: 420px;
+  width: 100%;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  color: #007acc;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #007acc;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #005fa3;
+}
+
+.login-container .cadastro-link {
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+  color: #007acc;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-container .cadastro-link:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #ffcdd2;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
