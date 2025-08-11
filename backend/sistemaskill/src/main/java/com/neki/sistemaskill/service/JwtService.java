@@ -11,12 +11,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Service
 public class JwtService {
     
     private static final String SECRET_KEY = "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970";
-    private static final long ACCESS_TOKEN_EXPIRATION = 900000; // 15 minutos
+    private static final long ACCESS_TOKEN_EXPIRATION = 3600000; // 1 hora
     private static final long REFRESH_TOKEN_EXPIRATION = 604800000; // 7 dias
     
     public String extractUsername(String token) {
@@ -78,5 +79,10 @@ public class JwtService {
     
     public String getTokenType(String token) {
         return extractClaim(token, claims -> claims.get("type", String.class));
+    }
+
+    public Boolean isTokenValid(String token, UserDetails userDetails) {
+        final String username = extractUsername(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 }

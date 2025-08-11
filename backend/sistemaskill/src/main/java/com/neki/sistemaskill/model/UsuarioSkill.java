@@ -33,8 +33,8 @@ public class UsuarioSkill {
     private Skill skill;
 
     @NotNull
-    @Min(value=1, message="O level deve ser entre 1 e 5")
-    @Max(value=5, message="O level deve ser entre 1 e 5")
+    @Min(value=1, message="O level deve ser entre 1 e 10")
+    @Max(value=10, message="O level deve ser entre 1 e 10")
     private Integer level;
 
     @Column(name = "data_criacao")

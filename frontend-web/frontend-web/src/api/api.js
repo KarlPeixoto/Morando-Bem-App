@@ -20,7 +20,7 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
     
-    if (error.response?.status === 401 && !originalRequest._retry) {
+    if ((error.response?.status === 401 || error.response?.status === 403) && !originalRequest._retry) {
       originalRequest._retry = true;
       
       try {
@@ -38,7 +38,7 @@ api.interceptors.response.use(
         sessionStorage.setItem("refreshToken", newRefreshToken);
         
         originalRequest.headers.Authorization = `Bearer ${accessToken}`;
-        return api(originalRequest);
+        return axios(originalRequest);
       } catch (refreshError) {
         sessionStorage.clear();
         window.location.href = "/login";

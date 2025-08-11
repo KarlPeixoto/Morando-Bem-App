@@ -10,15 +10,15 @@ public class SkillAssociacaoDTO {
     private Long skillId;
 
     @NotNull(message = "Level é obrigatório")
-    @Min(value = 1, message = "Level deve ser entre 1 e 5")
-    @Max(value = 5, message = "Level deve ser entre 1 e 5")
+    @Min(value = 1, message = "Level deve ser entre 1 e 10")
+    @Max(value = 10, message = "Level deve ser entre 1 e 10")
     private Integer level;
 
     public SkillAssociacaoDTO() {
     }
 
     public SkillAssociacaoDTO(@NotNull(message = "ID da Skill é obrigatório") Long skillId,
-            @NotNull(message = "Level é obrigatório") @Min(value = 1, message = "Level deve ser entre 1 e 5") @Max(value = 5, message = "Level deve ser entre 1 e 5") Integer level) {
+            @NotNull(message = "Level é obrigatório") @Min(value = 1, message = "Level deve ser entre 1 e 10") @Max(value = 10, message = "Level deve ser entre 1 e 10") Integer level) {
         this.skillId = skillId;
         this.level = level;
     }
