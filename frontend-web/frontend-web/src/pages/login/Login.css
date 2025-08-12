@@ -4,13 +4,15 @@
   --bg-secondary: #ffffff;
   --bg-gradient-from: #f1f5f9;
   --bg-gradient-to: #e2e8f0;
-  --text-primary: #0f172a;
+  --text-primary: #111827;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
   --border-color: #e2e8f0;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #7cb342;
-  --accent-hover: #689f38;
+  --accent-color: #6366f1;
+  --accent-hover: #4f46e5;
+  --secondary-color: #0ea5e9;
+  --success-color: #10b981;
 }
 
 .dark {
@@ -23,8 +25,10 @@
   --text-muted: #94a3b8;
   --border-color: #475569;
   --shadow-color: rgba(0, 0, 0, 0.3);
-  --accent-color: #9ccc65;
-  --accent-hover: #aed581;
+  --accent-color: #818cf8;
+  --accent-hover: #a5b4fc;
+  --secondary-color: #38bdf8;
+  --success-color: #34d399;
 }
 
 * {
@@ -112,7 +116,7 @@ body {
 }
 
 .create-account-link {
-  color: #2196f3;
+  color: var(--secondary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }

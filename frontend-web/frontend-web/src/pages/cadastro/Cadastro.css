@@ -4,27 +4,31 @@
   --bg-secondary: #ffffff;
   --bg-gradient-from: #f1f5f9;
   --bg-gradient-to: #e2e8f0;
-  --text-primary: #0f172a;
+  --text-primary: #111827;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
   --border-color: #e2e8f0;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #7cb342;
-  --accent-hover: #689f38;
+  --accent-color: #6366f1;
+  --accent-hover: #5b21b6;
+  --secondary-color: #0ea5e9;
+  --success-color: #10b981;
 }
 
 .dark {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
   --bg-gradient-from: #1e293b;
   --bg-gradient-to: #334155;
-  --text-primary: #f1f5f9;
+  --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
   --border-color: #475569;
   --shadow-color: rgba(0, 0, 0, 0.3);
-  --accent-color: #9ccc65;
-  --accent-hover: #aed581;
+  --accent-color: #7c3aed;
+  --accent-hover: #8b5cf6;
+  --secondary-color: #0ea5e9;
+  --success-color: #10b981;
 }
 
 * {
@@ -112,13 +116,14 @@ body {
 }
 
 .login-account-link {
-  color: #2196f3;
+  color: var(--secondary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .login-account-link:hover {
   text-decoration: underline;
+  color: var(--accent-color);
 }
 
 .error-message {

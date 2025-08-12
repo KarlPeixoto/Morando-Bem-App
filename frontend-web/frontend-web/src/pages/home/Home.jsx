@@ -131,9 +131,9 @@ export default function Home() {
         return "🛫"
       case "organização financeira avançada":
         return "💰"
-      
+
       default:
-        return "💡" 
+        return "💡"
     }
   }
 
@@ -210,6 +210,12 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="skill-content">
+                  {assoc.skill.descricao && (
+                    <div className="skill-description">
+                      <p>{assoc.skill.descricao}</p>
+                    </div>
+                  )}
+
                   <div className="level-info">
                     <div className="level-display">
                       <span className="star-icon">⭐</span>

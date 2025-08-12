@@ -19,13 +19,16 @@ body,
   --bg-secondary: #ffffff;
   --bg-gradient-from: #f1f5f9;
   --bg-gradient-to: #e2e8f0;
-  --text-primary: #0f172a;
+  --text-primary: #111827;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
   --border-color: #e2e8f0;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --accent-color: #0f172a;
-  --accent-hover: #1e293b;
+  /* Implementando paleta roxo profissional */
+  --accent-color: #6366f1;
+  --accent-hover: #4f46e5;
+  --secondary-color: #0ea5e9;
+  --success-color: #10b981;
 }
 
 .dark {
@@ -38,8 +41,11 @@ body,
   --text-muted: #94a3b8;
   --border-color: #475569;
   --shadow-color: rgba(0, 0, 0, 0.3);
-  --accent-color: #f1f5f9;
-  --accent-hover: #e2e8f0;
+  /* Cores roxo para modo escuro */
+  --accent-color: #818cf8;
+  --accent-hover: #a5b4fc;
+  --secondary-color: #38bdf8;
+  --success-color: #34d399;
 }
 
 * {
@@ -157,7 +163,7 @@ body,
 }
 
 .main-content {
-  padding: 32px 16px; 
+  padding: 32px 16px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -196,8 +202,9 @@ body,
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
+  /* Usando cor roxo primária */
   background: var(--accent-color);
-  color: var(--bg-secondary);
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -240,8 +247,9 @@ body,
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
+  /* Usando cor roxo primária */
   background: var(--accent-color);
-  color: var(--bg-secondary);
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -305,6 +313,19 @@ body,
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* Adicionando estilos para a descrição da skill */
+.skill-description {
+  margin-bottom: 8px;
+}
+
+.skill-description p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
 }
 
 .level-info {
@@ -391,6 +412,7 @@ body,
 
 .progress-fill {
   height: 100%;
+  /* Usando cor roxo para barra de progresso */
   background: var(--accent-color);
   border-radius: 4px;
   transition: width 0.3s ease;
@@ -418,12 +440,18 @@ body,
 }
 
 .update-btn {
-  color: var(--text-primary);
+  /* Usando cor azul secundária para botão de atualizar */
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .update-btn:hover {
-  background: var(--bg-primary);
-  border-color: var(--text-muted);
+  background: rgba(14, 165, 233, 0.1);
+  border-color: var(--secondary-color);
+}
+
+.dark .update-btn:hover {
+  background: rgba(56, 189, 248, 0.1);
 }
 
 .delete-btn {
