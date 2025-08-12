@@ -197,13 +197,4 @@ cd backend/sistemaskill
 
 ---
 
-## 📝 Notas Importantes
-
-1. **Segurança:** Nunca commite o arquivo `.env` no repositório
-2. **IP Local:** Ajuste o IP no frontend mobile conforme sua rede
-3. **Email:** Configure uma senha de app do Gmail para envio de emails
-4. **JWT Secret:** Use uma chave secreta forte em produção
-
----
-
 👨‍💻 **Autor:** Mateus Karl Peixoto
