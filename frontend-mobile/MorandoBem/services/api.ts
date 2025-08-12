@@ -2,8 +2,18 @@ import axios from "axios"
 import { Alert } from "react-native"
 import { router } from "expo-router"
 
-// SUBSTITUA PELO SEU IP LOCAL
-const BASE_URL = "http://192.168.15.7:8080/api" // COLOQUE SEU IP AQUI
+// Configuração dinâmica da API
+const getBaseUrl = () => {
+  // Em desenvolvimento, usar IP local
+  if (__DEV__) {
+    // Você pode configurar isso via variável de ambiente ou ajustar conforme necessário
+    return "http://192.168.15.7:8080/api"
+  }
+  // Em produção, usar URL do servidor
+  return "https://your-production-server.com/api"
+}
+
+const BASE_URL = getBaseUrl()
 
 const api = axios.create({
   baseURL: BASE_URL,

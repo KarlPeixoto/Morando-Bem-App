@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -16,9 +17,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Service
 public class JwtService {
     
-    private static final String SECRET_KEY = "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970";
-    private static final long ACCESS_TOKEN_EXPIRATION = 3600000; // 1 hora
-    private static final long REFRESH_TOKEN_EXPIRATION = 604800000; // 7 dias
+    @Value("${jwt.secret}")
+    private String secretKey;
+    
+    @Value("${jwt.access-token.expiration}")
+    private long accessTokenExpiration;
+    
+    @Value("${jwt.refresh-token.expiration}")
+    private long refreshTokenExpiration;
     
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -42,20 +48,20 @@ public class JwtService {
     }
     
     private SecretKey getSignInKey() {
-        byte[] keyBytes = java.util.Base64.getDecoder().decode(SECRET_KEY);
+        byte[] keyBytes = java.util.Base64.getDecoder().decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
     
     public String generateAccessToken(String username) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("type", "access");
-        return createToken(claims, username, ACCESS_TOKEN_EXPIRATION);
+        return createToken(claims, username, accessTokenExpiration);
     }
     
     public String generateRefreshToken(String username) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("type", "refresh");
-        return createToken(claims, username, REFRESH_TOKEN_EXPIRATION);
+        return createToken(claims, username, refreshTokenExpiration);
     }
     
     private String createToken(Map<String, Object> claims, String subject, long expiration) {
