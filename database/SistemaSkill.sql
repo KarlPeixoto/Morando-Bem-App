@@ -32,6 +32,40 @@ CREATE SEQUENCE seq_usuario_skills
     START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
+    CACHE 1;-- Sistema Skill - App "Morando Bem"
+-- Script de criação do banco de dados
+-- Aplicação para ajudar pessoas que estão morando sozinhas pela primeira vez
+
+-- Drop das tabelas se existirem
+DROP TABLE IF EXISTS usuario_skills CASCADE;
+DROP TABLE IF EXISTS skills CASCADE;
+DROP TABLE IF EXISTS usuarios CASCADE;
+
+-- Drop das sequences se existirem
+DROP SEQUENCE IF EXISTS seq_usuarios CASCADE;
+DROP SEQUENCE IF EXISTS seq_skills CASCADE;
+DROP SEQUENCE IF EXISTS seq_usuario_skills CASCADE;
+
+-- Criação das sequences
+CREATE SEQUENCE seq_usuarios
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+CREATE SEQUENCE seq_skills
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+CREATE SEQUENCE seq_usuario_skills
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
     CACHE 1;
 
 -- Criação das tabelas
@@ -66,7 +100,7 @@ CREATE TABLE usuario_skills (
     ativo BOOLEAN DEFAULT TRUE,
     CONSTRAINT fk_usuario_skills_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
     CONSTRAINT fk_usuario_skills_skill FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE,
-    CONSTRAINT chk_level_range CHECK (level >= 1 AND level <= 5),
+    CONSTRAINT chk_level_range CHECK (level >= 1 AND level <= 10),
     CONSTRAINT uk_usuario_skill_unique UNIQUE (usuario_id, skill_id, ativo)
 );
 
