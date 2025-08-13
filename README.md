@@ -153,6 +153,7 @@ Interface disponível em: http://localhost:5173
 ```bash
 cd frontend-mobile/MorandoBem
 npm install
+//Se estiver dando erro: npm install --legacy-peer-deps
 npx expo start
 ```
 
